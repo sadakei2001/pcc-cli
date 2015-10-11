@@ -1,0 +1,17 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/../lib")
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/../src")
+
+import pcc.driver
+
+def main():
+    return pcc.driver.main()
+
+
+if __name__ == "__main__":
+    sys.exit(main())
+
