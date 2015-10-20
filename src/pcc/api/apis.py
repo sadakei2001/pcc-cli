@@ -1,15 +1,18 @@
 # -*- coding: utf-8 -*-
 
+__names = []
 __apis = {}
 
 def names():
-    return __apis.keys()
+    return __names
 
 def get(name):
     return __apis.get(name)
 
 def add(api):
-    __apis[api.command()] = api
+    name = api.command()
+    __names.append(name)
+    __apis[name] = api
 
 
 # Farm

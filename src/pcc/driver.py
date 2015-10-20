@@ -10,22 +10,25 @@ from requester import Requester
 from api import apis
 
 def main():
+    # プログラム名
+    prog = os.path.basename(sys.argv[0])
+
+
     # コマンドラインオプションのルール設定
-    parser = argparse.ArgumentParser()
-    subparsers = parser.add_subparsers(dest="api_name")
+    parser = argparse.ArgumentParser(prog=prog, usage=prog + " [api_name] [options]")
+    subparsers = parser.add_subparsers(dest="api_name", metavar="api_name")
 
     for name in apis.names():
         # コマンドごとのオプション
-        subparser = subparsers.add_parser(name)
+        subparser = subparsers.add_parser(name, prog=prog, help="", usage=prog + " " + name + " [options]")
         apis.get(name).init_argument(subparser)
 
         # 共通オプション
-        subparser.add_argument("--url", help="PCC url (ex. http://localhost/auto-web/)")
-        subparser.add_argument("--access-id", help="PCC user access id")
-        subparser.add_argument("--access-key", help="PCC user access key")
+        subparser.add_argument("--url", metavar="PCC_URL", required=False)
+        subparser.add_argument("--access-id", metavar="PCC_ACCESS_ID", required=False)
+        subparser.add_argument("--access-key", metavar="PCC_ACCESS_KEY", required=False)
 
     args = parser.parse_args()
-#    print args
 
 
     # 共通オプションの取得
