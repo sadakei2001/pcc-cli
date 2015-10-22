@@ -6,7 +6,7 @@ Command line interface for PrimeCloud Controller.
 ## Usage
 
 ```
-$ pcc [api_name] [options] --url https://hostname/auto-web/ --access-id XXXXXXXXXX --access-key YYYYYYYYYY
+$ pcc [command] [options] --url https://hostname/auto-web/ --access-id XXXXXXXXXX --access-key YYYYYYYYYY
 ```
 
 or
@@ -16,7 +16,7 @@ $ export PCC_URL=https://hostname/auto-web/
 $ export PCC_ACCESS_ID=XXXXXXXXXX
 $ export PCC_ACCESS_KEY=YYYYYYYYYY
 
-$ pcc [api_name] [options]
+$ pcc [command] [options]
 ```
 
 ## Example
