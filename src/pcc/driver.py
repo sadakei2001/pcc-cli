@@ -4,7 +4,7 @@ import sys
 import os
 import codecs
 import json
-import argparse.argparse as argparse
+import argparse
 
 from requester import Requester
 from api import apis
