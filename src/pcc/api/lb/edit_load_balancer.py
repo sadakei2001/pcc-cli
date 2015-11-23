@@ -4,7 +4,6 @@ def command():
     return "edit-load-balancer"
 
 def init_argument(parser):
-    parser.add_argument("--farm-no", required=True)
     parser.add_argument("--load-balancer-no", required=True)
     parser.add_argument("--component-no", required=True)
     parser.add_argument("--security-groups", required=True)
@@ -13,7 +12,6 @@ def init_argument(parser):
     parser.add_argument("--is-internal", required=False)
 
 def execute(requester, args):
-    farm_no = args.farm_no
     load_balancer_no = args.load_balancer_no
     component_no = args.component_no
     security_groups = args.security_groups
@@ -22,7 +20,6 @@ def execute(requester, args):
     is_internal = args.is_internal
 
     parameters = {}
-    parameters["FarmNo"] = farm_no
     parameters["LoadBalancerNo"] = load_balancer_no
     parameters["ComponentNo"] = component_no
     parameters["SecurityGroups"] = security_groups

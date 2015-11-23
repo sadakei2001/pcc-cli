@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 def command():
-    return "describe-component"
+    return "get-attachable-component"
 
 def init_argument(parser):
     parser.add_argument("--component-no", required=True)
@@ -12,4 +12,4 @@ def execute(requester, args):
     parameters = {}
     parameters["ComponentNo"] = component_no
 
-    return requester.execute("/DescribeComponent", parameters)
+    return requester.execute("/GetAttachableComponent", parameters)

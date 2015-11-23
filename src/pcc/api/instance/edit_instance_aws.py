@@ -4,7 +4,6 @@ def command():
     return "edit-instance-aws"
 
 def init_argument(parser):
-    parser.add_argument("--farm-no", required=True)
     parser.add_argument("--instance-no", required=True)
     parser.add_argument("--instance-type", required=True)
     parser.add_argument("--key-name", required=True)
@@ -16,7 +15,6 @@ def init_argument(parser):
     parser.add_argument("--comment", required=False)
 
 def execute(requester, args):
-    farm_no = args.farm_no
     instance_no = args.instance_no
     instance_type = args.instance_type
     key_name = args.key_name
@@ -28,7 +26,6 @@ def execute(requester, args):
     comment = args.comment
 
     parameters = {}
-    parameters["FarmNo"] = farm_no
     parameters["InstanceNo"] = instance_no
     parameters["InstanceType"] = instance_type
     parameters["KeyName"] = key_name

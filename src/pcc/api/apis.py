@@ -50,22 +50,26 @@ add(instance.enable_zabbix_monitoring_instance)
 add(instance.disable_zabbix_monitoring_instance)
 
 # Component
+import component.list_component_type
 import component.list_component
 import component.describe_component
 import component.create_component
 import component.edit_component
 import component.delete_component
+import component.get_attachable_component
 import component.attach_component
 import component.detach_component
 import component.start_component
 import component.stop_component
 import component.start_all_component
 import component.stop_all_component
+add(component.list_component_type)
 add(component.list_component)
 add(component.describe_component)
 add(component.create_component)
 add(component.edit_component)
 add(component.delete_component)
+add(component.get_attachable_component)
 add(component.attach_component)
 add(component.detach_component)
 add(component.start_component)
@@ -109,11 +113,23 @@ add(lb.disable_load_balancer_listener)
 
 # Platform
 import platform.list_platform
+import platform.describe_platform
 add(platform.list_platform)
+add(platform.describe_platform)
 
 # Image
 import image.list_image
 add(image.list_image)
+
+# Address
+import address.list_aws_address
+import address.add_aws_address
+import address.edit_aws_address
+import address.delete_aws_address
+add(address.list_aws_address)
+add(address.add_aws_address)
+add(address.edit_aws_address)
+add(address.delete_aws_address)
 
 # Template
 import template.list_template

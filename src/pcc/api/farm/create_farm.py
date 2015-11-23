@@ -14,7 +14,7 @@ def execute(requester, args):
     comment = args.comment
 
     parameters = {}
-    parameters["CloudName"] = farm_name
+    parameters["FarmName"] = farm_name
     parameters["TemplateNo"] = template_no
 
     if (comment != None):

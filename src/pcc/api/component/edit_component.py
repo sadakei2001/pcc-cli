@@ -4,7 +4,6 @@ def command():
     return "edit-component"
 
 def init_argument(parser):
-    parser.add_argument("--farm-no", required=True)
     parser.add_argument("--component-no", required=True)
     parser.add_argument("--disk-size", required=True)
     parser.add_argument("--comment", required=False)
@@ -13,7 +12,6 @@ def init_argument(parser):
     parser.add_argument("--custom-param3", required=False)
 
 def execute(requester, args):
-    farm_no = args.farm_no
     component_no = args.component_no
     disk_size = args.disk_size
     comment = args.comment
@@ -22,7 +20,6 @@ def execute(requester, args):
     custom_param3 = args.custom_param3
 
     parameters = {}
-    parameters["FarmNo"] = farm_no
     parameters["ComponentNo"] = component_no
     parameters["DiskSize"] = disk_size
 

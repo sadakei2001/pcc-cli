@@ -6,14 +6,12 @@ def command():
 def init_argument(parser):
     parser.add_argument("--farm-no", required=True)
     parser.add_argument("--instance-name", required=True)
-    parser.add_argument("--platform-no", required=True)
     parser.add_argument("--image-no", required=True)
     parser.add_argument("--instance-type", required=False)
     parser.add_argument("--comment", required=False)
 
 def execute(requester, args):
     farm_no = args.farm_no
-    platform_no = args.platform_no
     image_no = args.image_no
     instance_name = args.instance_name
     instance_type = args.instance_type
@@ -21,7 +19,6 @@ def execute(requester, args):
 
     parameters = {}
     parameters["FarmNo"] = farm_no
-    parameters["PlatformNo"] = platform_no
     parameters["ImageNo"] = image_no
     parameters["InstanceName"] = instance_name
 

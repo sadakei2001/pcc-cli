@@ -4,12 +4,7 @@ def command():
     return "list-platform"
 
 def init_argument(parser):
-    parser.add_argument("--farm-no", required=True)
+    pass
 
 def execute(requester, args):
-    farm_no = args.farm_no
-
-    parameters = {}
-    parameters["FarmNo"] = farm_no
-
-    return requester.execute("/ListPlatform", parameters)
+    return requester.execute("/ListPlatform")

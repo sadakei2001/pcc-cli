@@ -9,11 +9,13 @@ import json
 
 class Requester:
 
+    api_path = "/rest"
+
     def __init__(self, url, access_id, access_key, options = None):
         if (url.endswith("/")):
-            self.api_url = url + "rest"
+            self.url = url[0:-1]
         else:
-            self.api_url = url + "/rest"
+            self.url = url
 
         self.access_id = access_id
         self.access_key = access_key
@@ -21,8 +23,6 @@ class Requester:
 
 
     def execute(self, endpoint, parameters = None):
-        url = self.api_url + endpoint
-
         param = "AccessId=" + self.access_id
         param += "&Timestamp=" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
 
@@ -30,13 +30,13 @@ class Requester:
             for parameter in parameters:
                 param += "&" + parameter + "=" + str(parameters[parameter])
 
-        signature = hmac.new(self.access_key, url + "?" + param, hashlib.sha256).hexdigest()
+        signature = hmac.new(self.access_key, self.api_path + endpoint + "?" + param, hashlib.sha256).hexdigest()
 
         param += "&Signature=" + signature
 
         querystring = base64.b64encode(param)
 
-        request = urllib2.Request(url + "?" + querystring)
+        request = urllib2.Request(self.url + self.api_path + endpoint + "?" + querystring)
         response_json = urllib2.urlopen(request).read()
 
         response = json.loads(response_json, "utf-8")

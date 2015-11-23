@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 def command():
-    return "list-image"
+    return "list-aws-address"
 
 def init_argument(parser):
     parser.add_argument("--platform-no", required=True)
@@ -12,4 +12,4 @@ def execute(requester, args):
     parameters = {}
     parameters["PlatformNo"] = platform_no
 
-    return requester.execute("/ListImage", parameters)
+    return requester.execute("/ListAwsAddress", parameters)
