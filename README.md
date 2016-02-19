@@ -70,3 +70,8 @@ Output
     "SUCCESS": "true"
 }
 ```
+
+
+## Requirement
+
+**pcc-cli** works on Python 2.6 or 2.7.
