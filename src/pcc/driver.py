@@ -22,6 +22,7 @@ def main():
 
     # コマンドラインオプションのルール設定
     parser = argparse.ArgumentParser(prog=prog, usage=prog + " [command] [options]")
+    parser.add_argument("--version", action="version", version="pcc-cli 1.0.0")
     subparsers = parser.add_subparsers(dest="command", metavar="command")
 
     for _command in apis.commands():
