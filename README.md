@@ -1,6 +1,24 @@
 # pcc-cli
 
+## Description
+
 Command line interface for PrimeCloud Controller.
+
+
+
+## Requirement
+
+**pcc-cli** works on Python 2.6 or 2.7.
+
+
+
+
+## Support PCC version
+
+| PrimeCloud Controller | pcc-cli |
+|-----------------------|--------------|
+| 2.6.0 | 1.0.0 |
+
 
 
 ## Usage
@@ -18,6 +36,8 @@ $ export PCC_ACCESS_KEY=YYYYYYYYYY
 
 $ pcc [command] [options]
 ```
+
+
 
 ## Example
 
@@ -72,6 +92,10 @@ Output
 ```
 
 
-## Requirement
 
-**pcc-cli** works on Python 2.6 or 2.7.
+## License
+
+**pcc-cli** is released under version 2.0 of Apache License.
+
+http://www.apache.org/licenses/LICENSE-2.0
+
