@@ -55,7 +55,7 @@ def main():
 
 
     # エラーハンドリング
-    if (response.get("SUCCESS") == "false"):
+    if (response.get("SUCCESS") == False):
         output(response.get("Message"))
         sys.exit(1)
 
