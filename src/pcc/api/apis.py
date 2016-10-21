@@ -30,6 +30,7 @@ import instance.list_instance
 import instance.describe_instance
 import instance.create_instance
 import instance.edit_instance_aws
+import instance.edit_instance_vmware
 import instance.delete_instance
 import instance.start_instance
 import instance.stop_instance
@@ -41,6 +42,7 @@ add(instance.list_instance)
 add(instance.describe_instance)
 add(instance.create_instance)
 add(instance.edit_instance_aws)
+add(instance.edit_instance_vmware)
 add(instance.delete_instance)
 add(instance.start_instance)
 add(instance.stop_instance)
