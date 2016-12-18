@@ -44,4 +44,4 @@ def execute(requester, args):
     if (comment != None):
         parameters["Comment"] = comment
 
-    return requester.execute("/EditInstance", parameters)
+    return requester.execute("/EditInstanceAws", parameters)
