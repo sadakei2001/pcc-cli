@@ -13,6 +13,7 @@ def init_argument(parser):
     parser.add_argument("--ip-address", required=False)
     parser.add_argument("--private-ip-address", required=False)
     parser.add_argument("--comment", required=False)
+    parser.add_argument("--root-size", required=False)
 
 def execute(requester, args):
     instance_no = args.instance_no
@@ -24,6 +25,7 @@ def execute(requester, args):
     ip_address = args.ip_address
     private_ip_address = args.private_ip_address
     comment = args.comment
+    root_size = args.root_size
 
     parameters = {}
     parameters["InstanceNo"] = instance_no
@@ -43,5 +45,8 @@ def execute(requester, args):
 
     if (comment != None):
         parameters["Comment"] = comment
+
+    if (root_size != None):
+        parameters["RootSize"] = root_size
 
     return requester.execute("/EditInstanceAws", parameters)
