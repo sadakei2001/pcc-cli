@@ -13,6 +13,7 @@ def init_argument(parser):
     parser.add_argument("--subnet-mask", required=False)
     parser.add_argument("--default-gateway", required=False)
     parser.add_argument("--comment", required=False)
+    parser.add_argument("--root-size", required=False)
 
 def execute(requester, args):
     instance_no = args.instance_no
@@ -24,6 +25,7 @@ def execute(requester, args):
     subnet_mask = args.subnet_mask
     default_gateway = args.default_gateway
     comment = args.comment
+    root_size = args.root_size
 
     parameters = {}
     parameters["InstanceNo"] = instance_no
@@ -43,5 +45,8 @@ def execute(requester, args):
 
     if (comment != None):
         parameters["Comment"] = comment
+
+    if (root_size != None):
+        parameters["RootSize"] = root_size
 
     return requester.execute("/EditInstanceVmware", parameters)
