@@ -2,7 +2,6 @@
 
 import sys
 import os
-import codecs
 import json
 import argparse
 
@@ -11,7 +10,7 @@ from api import apis
 
 def main():
     # プログラム名
-    prog = os.path.basename(sys.argv[0])
+    prog = "pcc"
 
 
     # 共通オプションを環境変数から取得
@@ -68,6 +67,17 @@ def main():
 
 
 def output(message):
-    sys.stdout = codecs.getwriter("utf_8")(sys.stdout)
+    if sys.version_info[0] == 2:
+        import codecs
+        sys.stdout = codecs.getwriter("utf-8")(sys.stdout)
+    else:
+        import io
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+
     sys.stdout.write(message)
     sys.stdout.write("\n")
+
+
+if __name__ == "__main__":
+    sys.exit(main())
+

@@ -16,123 +16,123 @@ def add(api):
 
 
 # Farm
-import farm.list_farm
-import farm.create_farm
-import farm.edit_farm
-import farm.delete_farm
-add(farm.list_farm)
-add(farm.create_farm)
-add(farm.edit_farm)
-add(farm.delete_farm)
+from .farm import list_farm
+from .farm import create_farm
+from .farm import edit_farm
+from .farm import delete_farm
+add(list_farm)
+add(create_farm)
+add(edit_farm)
+add(delete_farm)
 
 # Instance
-import instance.list_instance
-import instance.describe_instance
-import instance.create_instance
-import instance.edit_instance_aws
-import instance.edit_instance_vmware
-import instance.delete_instance
-import instance.start_instance
-import instance.stop_instance
-import instance.start_all_instance
-import instance.stop_all_instance
-import instance.enable_zabbix_monitoring_instance
-import instance.disable_zabbix_monitoring_instance
-add(instance.list_instance)
-add(instance.describe_instance)
-add(instance.create_instance)
-add(instance.edit_instance_aws)
-add(instance.edit_instance_vmware)
-add(instance.delete_instance)
-add(instance.start_instance)
-add(instance.stop_instance)
-add(instance.start_all_instance)
-add(instance.stop_all_instance)
-add(instance.enable_zabbix_monitoring_instance)
-add(instance.disable_zabbix_monitoring_instance)
+from .instance import list_instance
+from .instance import describe_instance
+from .instance import create_instance
+from .instance import edit_instance_aws
+from .instance import edit_instance_vmware
+from .instance import delete_instance
+from .instance import start_instance
+from .instance import stop_instance
+from .instance import start_all_instance
+from .instance import stop_all_instance
+from .instance import enable_zabbix_monitoring_instance
+from .instance import disable_zabbix_monitoring_instance
+add(list_instance)
+add(describe_instance)
+add(create_instance)
+add(edit_instance_aws)
+add(edit_instance_vmware)
+add(delete_instance)
+add(start_instance)
+add(stop_instance)
+add(start_all_instance)
+add(stop_all_instance)
+add(enable_zabbix_monitoring_instance)
+add(disable_zabbix_monitoring_instance)
 
 # Component
-import component.list_component_type
-import component.list_component
-import component.describe_component
-import component.create_component
-import component.edit_component
-import component.delete_component
-import component.get_attachable_component
-import component.attach_component
-import component.detach_component
-import component.start_component
-import component.stop_component
-import component.start_all_component
-import component.stop_all_component
-add(component.list_component_type)
-add(component.list_component)
-add(component.describe_component)
-add(component.create_component)
-add(component.edit_component)
-add(component.delete_component)
-add(component.get_attachable_component)
-add(component.attach_component)
-add(component.detach_component)
-add(component.start_component)
-add(component.stop_component)
-add(component.start_all_component)
-add(component.stop_all_component)
+from .component import list_component_type
+from .component import list_component
+from .component import describe_component
+from .component import create_component
+from .component import edit_component
+from .component import delete_component
+from .component import get_attachable_component
+from .component import attach_component
+from .component import detach_component
+from .component import start_component
+from .component import stop_component
+from .component import start_all_component
+from .component import stop_all_component
+add(list_component_type)
+add(list_component)
+add(describe_component)
+add(create_component)
+add(edit_component)
+add(delete_component)
+add(get_attachable_component)
+add(attach_component)
+add(detach_component)
+add(start_component)
+add(stop_component)
+add(start_all_component)
+add(stop_all_component)
 
 # LoadBalancer
-import lb.list_load_balancer
-import lb.describe_load_balancer
-import lb.create_load_balancer
-import lb.edit_load_balancer
-import lb.delete_load_balancer
-import lb.attach_load_balancer
-import lb.detach_load_balancer
-import lb.start_load_balancer
-import lb.stop_load_balancer
-import lb.describe_load_balancer_health_check
-import lb.edit_load_balancer_health_check
-import lb.list_load_balancer_listener
-import lb.create_load_balancer_listener
-import lb.delete_load_balancer_listener
-import lb.enable_load_balancer_listener
-import lb.disable_load_balancer_listener
-add(lb.list_load_balancer)
-add(lb.describe_load_balancer)
-add(lb.create_load_balancer)
-add(lb.edit_load_balancer)
-add(lb.delete_load_balancer)
-add(lb.attach_load_balancer)
-add(lb.detach_load_balancer)
-add(lb.start_load_balancer)
-add(lb.stop_load_balancer)
-add(lb.describe_load_balancer_health_check)
-add(lb.edit_load_balancer_health_check)
-add(lb.list_load_balancer_listener)
-add(lb.create_load_balancer_listener)
-add(lb.delete_load_balancer_listener)
-add(lb.enable_load_balancer_listener)
-add(lb.disable_load_balancer_listener)
+from .lb import list_load_balancer
+from .lb import describe_load_balancer
+from .lb import create_load_balancer
+from .lb import edit_load_balancer
+from .lb import delete_load_balancer
+from .lb import attach_load_balancer
+from .lb import detach_load_balancer
+from .lb import start_load_balancer
+from .lb import stop_load_balancer
+from .lb import describe_load_balancer_health_check
+from .lb import edit_load_balancer_health_check
+from .lb import list_load_balancer_listener
+from .lb import create_load_balancer_listener
+from .lb import delete_load_balancer_listener
+from .lb import enable_load_balancer_listener
+from .lb import disable_load_balancer_listener
+add(list_load_balancer)
+add(describe_load_balancer)
+add(create_load_balancer)
+add(edit_load_balancer)
+add(delete_load_balancer)
+add(attach_load_balancer)
+add(detach_load_balancer)
+add(start_load_balancer)
+add(stop_load_balancer)
+add(describe_load_balancer_health_check)
+add(edit_load_balancer_health_check)
+add(list_load_balancer_listener)
+add(create_load_balancer_listener)
+add(delete_load_balancer_listener)
+add(enable_load_balancer_listener)
+add(disable_load_balancer_listener)
 
 # Platform
-import platform.list_platform
-import platform.describe_platform
-add(platform.list_platform)
-add(platform.describe_platform)
+from .platform import list_platform
+from .platform import describe_platform
+add(list_platform)
+add(describe_platform)
 
 # Image
-import image.list_image
-add(image.list_image)
+from .image import list_image
+add(list_image)
 
 # Address
-import address.list_aws_address
-import address.add_aws_address
-import address.edit_aws_address
-import address.delete_aws_address
-add(address.list_aws_address)
-add(address.add_aws_address)
-add(address.edit_aws_address)
-add(address.delete_aws_address)
+from .address import list_aws_address
+from .address import add_aws_address
+from .address import edit_aws_address
+from .address import delete_aws_address
+add(list_aws_address)
+add(add_aws_address)
+add(edit_aws_address)
+add(delete_aws_address)
 
 # Template
-import template.list_template
-add(template.list_template)
+from .template import list_template
+add(list_template)

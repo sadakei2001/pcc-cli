@@ -8,8 +8,9 @@ Command line interface for PrimeCloud Controller.
 
 ## Requirement
 
-**pcc-cli** works on Python 2.6 or 2.7.
+**pcc-cli** works on Python 2.6, 2.7, 3.4 or 3.5.
 
+In addition, need argparse library too.
 
 
 
