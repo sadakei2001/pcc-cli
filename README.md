@@ -18,6 +18,7 @@ In addition, need argparse library too.
 
 | PrimeCloud Controller | pcc-cli |
 |-----------------------|--------------|
+| 2.8.0 | 1.2.0 |
 | 2.7.0 | 1.1.0 |
 | 2.6.0 | 1.0.0 |
 

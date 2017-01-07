@@ -9,8 +9,10 @@ from requester import Requester
 from api import apis
 
 def main():
-    # プログラム名
+    # プログラム
     prog = "pcc"
+    version = "1.2.0"
+
 
 
     # 共通オプションを環境変数から取得
@@ -21,7 +23,7 @@ def main():
 
     # コマンドラインオプションのルール設定
     parser = argparse.ArgumentParser(prog=prog, usage=prog + " [command] [options]")
-    parser.add_argument("--version", action="version", version="pcc-cli 1.0.0")
+    parser.add_argument("--version", action="version", version="pcc-cli " + version)
     subparsers = parser.add_subparsers(dest="command", metavar="command")
 
     for _command in apis.commands():
