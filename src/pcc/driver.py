@@ -39,6 +39,14 @@ def main():
     args = parser.parse_args()
 
 
+    # Windows環境の場合、オプションで与えられた文字列の文字コードをShift_JISからUTF-8に変更する
+    if os.name == "nt":
+        dict = args.__dict__
+        for key in dict.keys():
+            if isinstance(dict[key], str):
+                dict[key] = dict[key].decode("shift-jis").encode("utf-8")
+
+
     # 共通オプションがコマンドラインで指定されていれば優先して利用する
     if (args.url != None):
         url = args.url
@@ -69,12 +77,14 @@ def main():
 
 
 def output(message):
-    if sys.version_info[0] == 2:
-        import codecs
-        sys.stdout = codecs.getwriter("utf-8")(sys.stdout)
-    else:
-        import io
-        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+    # Linux環境の場合、標準出力の文字コードをUTF-8にする
+    if os.name == "posix":
+        if sys.version_info[0] == 2:
+            import codecs
+            sys.stdout = codecs.getwriter("utf-8")(sys.stdout)
+        else:
+            import io
+            sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
     sys.stdout.write(message)
     sys.stdout.write("\n")
