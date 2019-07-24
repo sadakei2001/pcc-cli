@@ -40,7 +40,7 @@ def main():
 
 
     # Windows環境の場合、オプションで与えられた文字列の文字コードをShift_JISからUTF-8に変更する
-    if os.name == "nt":
+    if os.name == "nt" and sys.version_info.major ==2:
         dict = args.__dict__
         for key in dict.keys():
             if isinstance(dict[key], str):
